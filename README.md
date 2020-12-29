@@ -87,7 +87,7 @@ Files in this repository:
 
 |     File / Folder      |                         Description                          |
 | :--------------------: | :----------------------------------------------------------: |
-|         images         |  Folder at the root of the project, where images are stored  |
+|1. Create ZooKeeper Container    |  Folder at the root of the project, where images are stored  |
 | aws_cluster_create.py  | Creates and sets up a Redshift cluster on AWS with proper configurations |
 | aws_cluster_destroy.py |       Destorys the Redshift cluster on AWS, if exists        |
 |     sql_queries.py     | Contains the SQL queries for staging, schema definition and ETL |
