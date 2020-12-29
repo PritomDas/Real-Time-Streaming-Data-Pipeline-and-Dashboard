@@ -18,15 +18,22 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-
-A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming application. Sparkify has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the application, as well as a directory with JSON metadata on the songs in their application.
-
-They'd like a data engineer to build an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights in what songs their users are listening to. The role of this project is to create a data warehouse on cloud (AWS Redshift) and build ETL pipeline for this analysis. 
+Building Real Time Data Pipeline Using Apache Kafka, Apache Spark, Hadoop, PostgreSQL, Django and Flexmonster on Docker
 
 ### Project Description
 
-In this project, we will build a data warehouse on AWS and build an ETL pipeline for a database hosted on Redshift.  The data is loaded from S3 buckets to staging tables on Redshift and modeled into fact and dimensions tables to perform analytics and obtain meaningful insights.
 
+* In many data centers, different type of servers generate large amount of data(events, Event in this case is status of the server in the data center) in real-time.
+
+* There is always a need to process these data in real-time and generate insights which will be used by the server/data center monitoring people and they have to track these server's status regularly and find the resolution in case of issues occurring, for better server stability.
+
+* Since the data is huge and coming in real-time, we need to choose the right architecture with scalable storage and computation frameworks/technologies.
+
+* Hence we want to build the Real Time Data Pipeline Using Apache Kafka, Apache Spark, Hadoop, PostgreSQL, Django and Flexmonster on Docker to generate insights out of this data.
+
+* The Spark Project/Data Pipeline is built using Apache Spark with Scala and PySpark on Apache Hadoop Cluster which is on top of Docker.
+
+* Data Visualization is built using Django Web Framework and Flexmonster.
 ### Built With
 
 * python
