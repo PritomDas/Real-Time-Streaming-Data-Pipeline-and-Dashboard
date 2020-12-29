@@ -4,7 +4,7 @@
 <br />
 
 <p align="center">
-  <img src="./images/2.PNG" alt="Logo" width="300" height="300">
+  <img src="./images/2.PNG" alt="Logo" width="500" height="300">
 <h2 align="center"><i>Building Streaming Data Pipeline using Apache Hadoop, Apache Spark and Kafka on Docker</i></h2>
 </p>
 
