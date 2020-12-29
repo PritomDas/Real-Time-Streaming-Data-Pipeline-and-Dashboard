@@ -87,8 +87,8 @@ Files in this repository:
 
 |     File / Folder      |                         Description                          |
 | :--------------------: | :----------------------------------------------------------: |
-| aws_cluster_create.py  | Creates and sets up a Redshift cluster on AWS with proper configurations |
-| aws_cluster_destroy.py |       Destorys the Redshift cluster on AWS, if exists        |
+| 1. Create ZooKeeper Container  | docker pull zookeeper:3.4s |
+|  | docker run -d --hostname zookeepernode --net datamakingnet --ip 172.20.1.3 --name datamaking_zookeeper --publish 2181:2181 zookeeper:3.4 |
 |     sql_queries.py     | Contains the SQL queries for staging, schema definition and ETL |
 |    create_tables.py    | Drops and creates tables on AWS Redshift (Reset the tables)  |
 |         etl.py         | Stages and transforms the data from S3 buckets and loads them into tables |
