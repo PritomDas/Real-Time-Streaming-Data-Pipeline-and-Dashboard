@@ -62,7 +62,7 @@ After successful installation:
 #### (b) Create Single Node Kafka Cluster in Local Machine
 Run the following script in the created Docker Terminal:
 
-|     File / Folder      |                         Description                          |
+|     Steps    |                         Type Commands in Docker Terminal                        |
 | :--------------------: | :----------------------------------------------------------: |
 | 1. Create Docker Network | docker network create --subnet=172.20.0.0/16 datamakingnet # create custom network |
 | 2. Create ZooKeeper Container  | docker pull zookeeper:3.4s |
