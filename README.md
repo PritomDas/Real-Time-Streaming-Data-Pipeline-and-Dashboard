@@ -11,7 +11,7 @@
 
 </p>
 
-> Apache Hadoop, Apache Spark, Kafka, Scala, Python, PySpark PostgreSQL, Docker, Django, Flexmonster, Real Time Streaming, Data Pipeline, Dashboard
+> Apache Hadoop, Apache Spark, Apache ZooKeeper, Kafka, Scala, Python, PySpark PostgreSQL, Docker, Django, Flexmonster, Real Time Streaming, Data Pipeline, Dashboard
 
 
 
@@ -38,6 +38,7 @@ Building Real Time Data Pipeline Using Apache Kafka, Apache Spark, Hadoop, Postg
 
 * Apache Hadoop
 * Apache Spark
+* Apache ZooKeeper
 * Docker
 * Kafka
 * Django
@@ -53,7 +54,49 @@ Installed Docker Toolbox (https://github.com/docker/toolbox/releases) for Window
 
 ![database](./images/5.png)
 
-To fix the issue, first enable "Virtualization" from BIOS if it is disabled. Strangley, the "hypervisor" needed to be manually turned "Off", if it is turned "Auto". Use the following link to fi tx the issue if facing the same problem (https://github.com/docker/toolbox/issues/745).
+To fix the issue, first enable "Virtualization" from BIOS if it is disabled. Strangley, the "hypervisor" needed to be manually turned "Off", if it is turned "Auto". Use the following link to fix the issue if facing the same problem (https://github.com/docker/toolbox/issues/745).
+
+After successful installation:
+![database](./images/4a.png)
+
+#### (b) Create Single Node Kafka Cluster in Local Machine
+Run the following script in the created Docker Terminal:
+docker network create --subnet=172.20.0.0/16 datamakingnet # create custom network
+
+1. Create ZooKeeper Container
+
+docker pull zookeeper:3.4
+
+docker run -d --hostname zookeepernode --net datamakingnet --ip 172.20.1.3 --name datamaking_zookeeper --publish 2181:2181 zookeeper:3.4
+
+
+2. Create Kafka Container
+
+docker pull ches/kafka
+
+docker run -d --hostname kafkanode --net datamakingnet --ip 172.20.1.4 --name datamaking_kafka --publish 9092:9092 --publish 7203:7203 --env KAFKA_ADVERTISED_HOST_NAME=192.168.99.100 --env ZOOKEEPER_IP=192.168.99.100 ches/kafka
+
+
+docker images
+
+docker ps
+
+docker ps -a
+
+Files in this repository:
+
+|     File / Folder      |                         Description                          |
+| :--------------------: | :----------------------------------------------------------: |
+|         images         |  Folder at the root of the project, where images are stored  |
+| aws_cluster_create.py  | Creates and sets up a Redshift cluster on AWS with proper configurations |
+| aws_cluster_destroy.py |       Destorys the Redshift cluster on AWS, if exists        |
+|     sql_queries.py     | Contains the SQL queries for staging, schema definition and ETL |
+|    create_tables.py    | Drops and creates tables on AWS Redshift (Reset the tables)  |
+|         etl.py         | Stages and transforms the data from S3 buckets and loads them into tables |
+|       analyze.py       | Basic querying from all tables created to ensure their validity |
+|        dwh.cfg         |              Sample configuration file for AWS               |
+|         README         |                         Readme file                          |
+
 
 
 ```
