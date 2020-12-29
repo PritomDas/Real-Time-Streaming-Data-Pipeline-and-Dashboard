@@ -61,40 +61,18 @@ After successful installation:
 
 #### (b) Create Single Node Kafka Cluster in Local Machine
 Run the following script in the created Docker Terminal:
-docker network create --subnet=172.20.0.0/16 datamakingnet # create custom network
-
-1. Create ZooKeeper Container
-
-docker pull zookeeper:3.4
-
-docker run -d --hostname zookeepernode --net datamakingnet --ip 172.20.1.3 --name datamaking_zookeeper --publish 2181:2181 zookeeper:3.4
-
-
-2. Create Kafka Container
-
-docker pull ches/kafka
-
-docker run -d --hostname kafkanode --net datamakingnet --ip 172.20.1.4 --name datamaking_kafka --publish 9092:9092 --publish 7203:7203 --env KAFKA_ADVERTISED_HOST_NAME=192.168.99.100 --env ZOOKEEPER_IP=192.168.99.100 ches/kafka
-
-
-docker images
-
-docker ps
-
-docker ps -a
-
-Files in this repository:
 
 |     File / Folder      |                         Description                          |
 | :--------------------: | :----------------------------------------------------------: |
-| 1. Create ZooKeeper Container  | docker pull zookeeper:3.4s |
+| 1. Create Docker Network | docker network create --subnet=172.20.0.0/16 datamakingnet # create custom network |
+| 2. Create ZooKeeper Container  | docker pull zookeeper:3.4s |
 |  | docker run -d --hostname zookeepernode --net datamakingnet --ip 172.20.1.3 --name datamaking_zookeeper --publish 2181:2181 zookeeper:3.4 |
-|     2. Create Kafka Container    | docker pull ches/kafka |
+|     3. Create Kafka Container    | docker pull ches/kafka |
 |     | docker run -d --hostname kafkanode --net datamakingnet --ip 172.20.1.4 --name datamaking_kafka --publish 9092:9092 --publish 7203:7203 --env KAFKA_ADVERTISED_HOST_NAME=192.168.99.100 --env ZOOKEEPER_IP=192.168.99.100 ches/kafka |
-|         etl.py         | Stages and transforms the data from S3 buckets and loads them into tables |
-|       analyze.py       | Basic querying from all tables created to ensure their validity |
-|        dwh.cfg         |              Sample configuration file for AWS               |
-|         README         |                         Readme file                          |
+|                 | docker images |
+|           | docker ps |
+|           | docker ps -a |
+
 
 
 
