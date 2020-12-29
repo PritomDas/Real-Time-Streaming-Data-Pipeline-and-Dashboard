@@ -11,7 +11,7 @@
 
 </p>
 
-> Apache Hadoop, Apache Spark, Kafka, Scala, Python, PostgreSQL, Docker
+> Apache Hadoop, Apache Spark, Kafka, Scala, Python, PySpark PostgreSQL, Docker, Django, Flexmonster, Real Time Streaming, Data Pipeline, Dashboard
 
 
 
@@ -36,8 +36,15 @@ Building Real Time Data Pipeline Using Apache Kafka, Apache Spark, Hadoop, Postg
 * Data Visualization is built using Django Web Framework and Flexmonster.
 ### Built With
 
-* python
-* AWS
+* Apache Hadoop
+* Apache Spark
+* Docker
+* Kafka
+* Django
+* Flexmonster
+* Scala
+* Python
+* PySpark
 
 ### Dataset
 
