@@ -11,7 +11,7 @@
 
 </p>
 
-> redshift, aws, data warehousing, data engineering, ETL 
+> Apache Hadoop, Apache Spark, Kafka, Scala, Python, PostgreSQL, Docker
 
 
 
