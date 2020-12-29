@@ -22,7 +22,6 @@ Building Real Time Data Pipeline Using Apache Kafka, Apache Spark, Hadoop, Postg
 
 ### Project Description
 
-
 * In many data centers, different type of servers generate large amount of data(events, Event in this case is status of the server in the data center) in real-time.
 
 * There is always a need to process these data in real-time and generate insights which will be used by the server/data center monitoring people and they have to track these server's status regularly and find the resolution in case of issues occurring, for better server stability.
@@ -34,6 +33,13 @@ Building Real Time Data Pipeline Using Apache Kafka, Apache Spark, Hadoop, Postg
 * The Spark Project/Data Pipeline is built using Apache Spark with Scala and PySpark on Apache Hadoop Cluster which is on top of Docker.
 
 * Data Visualization is built using Django Web Framework and Flexmonster.
+
+### Use Case Diagram
+![database](./images/3.png)
+
+### Proposed Pipeline Architecture
+![database](./images/2.png)
+
 ### Built With
 
 * Apache Hadoop
