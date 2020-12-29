@@ -130,14 +130,14 @@ GRANT ALL PRIVILEGES ON DATABASE event_message_db TO demouser;
 \c event_message_db;
 
 
-|     Steps    |                         Type Commands in Docker Terminal                        |
-| :--------------------: | :----------------------------------------------------------: |
-| psql -U postgres | |
-| CREATE USER demouser WITH PASSWORD 'demouser';  |  |
-| ALTER USER demouser WITH SUPERUSER; |  |
-| CREATE DATABASE event_message_db;    |  |
-|   GRANT ALL PRIVILEGES ON DATABASE event_message_db TO demouser;  | |
-|       \c event_message_db;          |  |
+|     Steps    |
+| :--------------------: |
+| psql -U postgres |
+| CREATE USER demouser WITH PASSWORD 'demouser';  |
+| ALTER USER demouser WITH SUPERUSER; |
+| CREATE DATABASE event_message_db;    |
+|   GRANT ALL PRIVILEGES ON DATABASE event_message_db TO demouser;  |
+|       \c event_message_db;          |
 
 
 
