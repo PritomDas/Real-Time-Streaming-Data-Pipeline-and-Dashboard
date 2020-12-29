@@ -73,7 +73,23 @@ Run the following script in the created Docker Terminal:
 |           | docker ps |
 |           | docker ps -a |
 
+Screenshot:
+![database](./images/4b.png)
 
+#### (C) Create Single Node Apache Hadoop and Spark Cluster on Docker
+Run the following script in the created Docker Terminal:
+
+|     Steps    |                         Type Commands in Docker Terminal                        |
+| :--------------------: | :----------------------------------------------------------: |
+| 1. Create Single Node Hadoop Cluster | Unzip and extract datamaking_hadoop_spark_cluster_image.zip file
+ |
+|   | cd datamaking_hadoop_spark_cluster_image |
+| 2. Create docker images for Apache Hadoop, Apache Spark, Apache Hive and PostgreSQL | ./1_create_hadoop_spark_image.sh |
+| 3. Create docker containers for Apache Hadoop, Apache Spark, Apache Hive and PostgreSQL    | ./2_create_hadoop_spark_cluster.sh createa |
+|  Stop all Containers   | docker stop $(docker ps -a -q) |
+|                 |docker rm $(docker ps -a -q) |
+|  Remove all Images      | docker images -a|
+|           | docker rmi $(docker images -a -q) |
 
 
 ```
