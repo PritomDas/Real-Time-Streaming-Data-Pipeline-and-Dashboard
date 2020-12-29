@@ -91,6 +91,62 @@ Run the following script in the created Docker Terminal:
 |           | docker rmi $(docker images -a -q) |
 
 
+### Development Setup
+
+#### (a) Event Simuator Using Python
+Run the python script "data_center_server_status_simulator.py". This script simulates live creation of server status information.
+
+
+#### (b) Building Streaming Data Pipeline using Scala and Spark Structured Streaming (Scala Based) 
+Load "datamaking_streaming_data_pipeline (Scala)" as a new scala project in Idea IntelliJ and run it.
+
+#### OR
+
+#### (b) Building Streaming Data Pipeline using Scala and Spark Structured Streaming (PySpark Based) 
+Open "datamaking_streaming_data_pipeline (PySpark)". Run the following pyspark script "real_time_streaming_data_pipeline.py".
+
+
+#### (c) Setting up PostgreSQL Database(Events Database)
+Login to docker terminal and the PostgreSQL CLI will be used.
+
+
+PostgreSQL Database Setup:
+==========================
+
+psql -U postgres
+
+CREATE USER demouser WITH PASSWORD 'demouser';
+
+ALTER USER demouser WITH SUPERUSER;
+
+
+
+CREATE DATABASE event_message_db;
+
+
+GRANT ALL PRIVILEGES ON DATABASE event_message_db TO demouser;
+
+
+\c event_message_db;
+
+
+|     Steps    |                         Type Commands in Docker Terminal                        |
+| :--------------------: | :----------------------------------------------------------: |
+| psql -U postgres | |
+| CREATE USER demouser WITH PASSWORD 'demouser';  |  |
+| ALTER USER demouser WITH SUPERUSER; |  |
+| CREATE DATABASE event_message_db;    |  |
+|   GRANT ALL PRIVILEGES ON DATABASE event_message_db TO demouser;  | |
+|       \c event_message_db;          |  |
+
+
+
+
+
+
+
+
+
 ```
 
 #### Log Dataset
