@@ -43,9 +43,9 @@ Building Real Time Data Pipeline Using Apache Kafka, Apache Spark, Hadoop, Postg
 * Kafka
 * Django
 * Flexmonster
-* Scala
-* Python
-* PySpark
+* Scala  (IDE Used Idea IntellliJ Professional Edition)
+* Python (IDE Used PyCharm Professional Edition)
+* PySpark (IDE Used PyCharm Professional Edition)
 
 ### Environment Setup
 
