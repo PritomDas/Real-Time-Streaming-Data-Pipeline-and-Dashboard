@@ -5,7 +5,7 @@
 
 <p align="center">
   <img src="./images/awslogo.png" alt="Logo" width="260" height="200">
-<h2 align="center"><i>Building Streaming Data Pipeline using Apache Hadoop, PSark and Kafka on Docker</i></h2>
+<h2 align="center"><i>Building Streaming Data Pipeline using Apache Hadoop, Apache Spark and Kafka on Docker</i></h2>
 </p>
 
 
