@@ -1,0 +1,221 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Status Monitoring Dashboard</title>
+    <script src="https://cdn.flexmonster.com/flexmonster.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.flexmonster.com/demo.css">
+    <style>
+/* Charts Style  */
+
+.fm-charts-color-1 {
+  fill: #ffa600 !important;
+}
+
+.fm-charts-color-2 {
+  fill: #7eae26 !important;
+}
+
+.fm-charts-color-3 {
+  fill: #00a45a !important;
+}
+
+.fm-charts-color-4 {
+  fill: #df3800 !important;
+}
+
+.fm-charts-color-5 {
+  fill: #e95800 !important;
+}
+
+.fm-charts-color-6 {
+  fill: #ffa600 !important;
+}
+
+/* Header/Logo Title */
+.header {
+    padding: 10px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 15px;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>Server Status Monitoring Dashboard</h1>
+</div>
+<div id="datamaking-chart-container-1"></div>
+<div id="datamaking-chart-container-2"></div>
+<div id="datamaking-table-container" data-url="{% url 'dashboard_data' %}"></div>
+
+<script>
+function processData(dataset) {
+    var result = []
+    dataset = JSON.parse(dataset);
+    dataset.forEach(item => result.push(item.fields));
+    return result;
+}
+$.ajax({
+    url: $("#datamaking-table-container").attr("data-url"),
+    dataType: 'json',
+    success: function(data) {
+        new Flexmonster({
+            container: "#datamaking-table-container",
+            componentFolder: "https://cdn.flexmonster.com/",
+            width: "100%",
+            height: 430,
+            toolbar: true,
+            report: {
+                dataSource: {
+                    type: "json",
+                    data: processData(data),
+                    mapping: {
+                        "event_city_name": {
+                            "caption": "City Name"
+                        },
+                        "event_server_status_color_name": {
+                            "caption": "Server Status Color Code"
+                        },
+                        "total_message_count": {
+                            "caption": "Server Message Count",
+                            "type": "number"
+                        },
+                        "total_estimated_resolution_time": {
+                            "caption": "Estimated Resolution Time",
+                            "type": "number"
+                        }
+                    }
+                },
+                "slice": {
+                    "rows": [{
+                        "uniqueName": "event_city_name"
+                    }],
+                    "columns": [{
+                            "uniqueName": "event_server_status_color_name"
+                        },
+                        {
+                            "uniqueName": "[Measures]"
+                        }
+                    ],
+                    "measures": [{
+                            "uniqueName": "total_message_count",
+                            "aggregation": "sum"
+                        },
+                        {
+                            "uniqueName": "total_estimated_resolution_time",
+                            "aggregation": "sum"
+                        }
+                    ]
+                }
+            }
+        });
+        new Flexmonster({
+            container: "#datamaking-chart-container-1",
+            componentFolder: "https://cdn.flexmonster.com/",
+            width: "100%",
+            height: 430,
+            //toolbar: true,
+            report: {
+                dataSource: {
+                    type: "json",
+                    data: processData(data),
+                    mapping: {
+                        "event_city_name": {
+                            "caption": "City Name"
+                        },
+                        "event_server_status_color_name": {
+                            "caption": "Server Status Color Code"
+                        },
+                        "total_message_count": {
+                            "caption": "Server Message Count",
+                            "type": "number"
+                        },
+                        "total_estimated_resolution_time": {
+                            "caption": "Estimated Resolution Time",
+                            "type": "number"
+                        }
+                    }
+                },
+                "slice": {
+                    "rows": [{
+                        "uniqueName": "event_city_name"
+                    }],
+                    "columns": [{
+                        "uniqueName": "[Measures]"
+                    }],
+                    "measures": [{
+                        "uniqueName": "Total Message Count",
+                        "formula": "sum(\"total_message_count\")",
+                        "caption": "Total Message Count"
+                    },
+                    {
+                        "uniqueName": "Total Estimated Resolution Time",
+                        "formula": "sum(\"total_estimated_resolution_time\")",
+                        "caption": "Total Estimated Resolution Time"
+                    }]
+                },
+                "options": {
+                    "viewType": "charts",
+                    "chart": {
+                        "type": "pie"
+                    }
+                }
+            }
+        });
+        new Flexmonster({
+            container: "#datamaking-chart-container-2",
+            componentFolder: "https://cdn.flexmonster.com/",
+            width: "100%",
+            height: 430,
+            //toolbar: true,
+            report: {
+                dataSource: {
+                    type: "json",
+                    data: processData(data),
+                    mapping: {
+                        "event_city_name": {
+                            "caption": "City Name"
+                        },
+                        "event_server_status_color_name": {
+                            "caption": "Server Status Color Code"
+                        },
+                        "total_message_count": {
+                            "caption": "Server Message Count",
+                            "type": "number"
+                        },
+                        "total_estimated_resolution_time": {
+                            "caption": "Estimated Resolution Time",
+                            "type": "number"
+                        }
+                    }
+                },
+                "slice": {
+                    "rows": [{
+                        "uniqueName": "event_city_name"
+                    }],
+                    "columns": [{
+                        "uniqueName": "[Measures]"
+                    }],
+                    "measures": [{
+                        "uniqueName": "Total Message Count",
+                        "formula": "sum(\"total_message_count\")",
+                        "caption": "Total Message Count"
+                    }]
+                },
+                "options": {
+                    "viewType": "charts",
+                    "chart": {
+                        "type": "bar"
+                    }
+                }
+            }
+        });
+    }
+});
+
+
+</script>
+</body>
+</html>
