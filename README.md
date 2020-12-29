@@ -133,8 +133,8 @@ Load the folder "Server Status Monitoring" in VS Code IDE as a new project and r
 ### Final Result
 The dashboard updates live as the python simultor keeps feeding with new data. Some sample screenshots:
 
-![database](./images/'6 result.png')
-![database](./images/'7 result.png')
+![database](./images/'6 result.PNG')
+![database](./images/'7 result.PNG')
 
 
 <!-- CONTACT -->
