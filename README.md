@@ -4,7 +4,7 @@
 <br />
 
 <p align="center">
-  <img src="./images/awslogo.png" alt="Logo" width="260" height="200">
+  <img src="./images/2.PNG" alt="Logo" width="260" height="200">
 <h2 align="center"><i>Building Streaming Data Pipeline using Apache Hadoop, Apache Spark and Kafka on Docker</i></h2>
 </p>
 
@@ -38,7 +38,7 @@ Building Real Time Data Pipeline Using Apache Kafka, Apache Spark, Hadoop, Postg
 ![database](./images/3.png)
 
 ### Proposed Pipeline Architecture
-![database](./images/2.png)
+![database](./images/2.PNG)
 
 ### Built With
 
