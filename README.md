@@ -89,8 +89,8 @@ Files in this repository:
 | :--------------------: | :----------------------------------------------------------: |
 | 1. Create ZooKeeper Container  | docker pull zookeeper:3.4s |
 |  | docker run -d --hostname zookeepernode --net datamakingnet --ip 172.20.1.3 --name datamaking_zookeeper --publish 2181:2181 zookeeper:3.4 |
-|     sql_queries.py     | Contains the SQL queries for staging, schema definition and ETL |
-|    create_tables.py    | Drops and creates tables on AWS Redshift (Reset the tables)  |
+|     2. Create Kafka Container    | docker pull ches/kafka |
+|     | docker run -d --hostname kafkanode --net datamakingnet --ip 172.20.1.4 --name datamaking_kafka --publish 9092:9092 --publish 7203:7203 --env KAFKA_ADVERTISED_HOST_NAME=192.168.99.100 --env ZOOKEEPER_IP=192.168.99.100 ches/kafka |
 |         etl.py         | Stages and transforms the data from S3 buckets and loads them into tables |
 |       analyze.py       | Basic querying from all tables created to ensure their validity |
 |        dwh.cfg         |              Sample configuration file for AWS               |
